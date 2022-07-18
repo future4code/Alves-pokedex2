@@ -4,7 +4,6 @@ import Header from '../../Components/Header/Header'
 const DetailsPoke = () => {
   return (
     <div>
-      <Header />
       DetailsPoke
       </div>
   )

@@ -8,7 +8,7 @@ function App() {
     <div>
       <Router />
       <Cards />
-<DetailsPoke />
+      <DetailsPoke />
      Pokedex
     </div>
   );
