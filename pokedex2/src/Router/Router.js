@@ -5,6 +5,7 @@ import Pokedex from "../Pages/Pokedex/Pokedex";
 import Header from "../Components/Header/Header";
 
 function Router() {
+    return (
     <BrowserRouter>
         <Header />
         <Routes>
@@ -13,6 +14,7 @@ function Router() {
             <Route path="/DetailsPoke" element={<DetailsPoke />} />
         </Routes>
     </BrowserRouter>
+    )
 }
 
 export default Router
