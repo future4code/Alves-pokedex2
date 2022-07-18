@@ -7,9 +7,7 @@ function App() {
   return (
     <div>
       <Router />
-{/*       <Router /> */}
-{/*       <Cards />
-      <DetailsPoke /> */}
+
     </div>
   );
 }
