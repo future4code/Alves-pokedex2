@@ -9,7 +9,7 @@ function Router() {
     <BrowserRouter>
         <Header />
         <Routes>
-            <Route index element={<Home />} />
+            <Route index exact path="/" element={<Home />} />
             <Route path="/Pokedex" element={<Pokedex />} />
             <Route path="/DetailsPoke" element={<DetailsPoke />} />
         </Routes>
