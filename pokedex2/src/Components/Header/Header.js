@@ -2,34 +2,37 @@ import React, { useState } from 'react'
 import Logo from '../../Assets/logo.png'
 import { useNavigate } from "react-router-dom"
 import { goToPokedex, goToHome } from '../../Router/Coordinator'
+import { ContainerHeader, ButtonPokedex, ButtonHome, DivImg } from './HeaderStyled'
+import {MdArrowBackIosNew} from 'react-icons/md'
 
 const Header = () => {
   const navigate = useNavigate()
-  const [screen, setScreen] = useState("/")
 
-  const teste = window.location.href
-  console.log("aqui", teste)
- 
- const buttonHeader =() =>{
-  if(window.location.pathname === `/`) {
-    return (<button onClick={() => goToPokedex(navigate)}>Pokedex</button>)
-  } else if (window.location.pathname === `/Pokedex`) {
-    return(<button onClick={() => goToHome(navigate)}>Home</button>)
-  } else {
-    return (
-      <div>
-      <button onClick={() => goToHome(navigate)}>Home</button>
-      <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-      <button>Excluir Pokemon</button>
-    </div>
-  )
- }
- }
+  const buttonHeader = () => {
+    if (window.location.pathname === `/`) {
+      return (<ButtonPokedex onClick={() => goToPokedex(navigate)}>Pokedéx</ButtonPokedex>)
+    } else if (window.location.pathname === `/Pokedex`) {
+      return (<ButtonHome onClick={() => goToHome(navigate)}>  <MdArrowBackIosNew />Todos Pokémons</ButtonHome>)
+    } else {
+      return (
+        <div>
+          <ButtonHome onClick={() => goToHome(navigate)}> <MdArrowBackIosNew />Todos Pokémons</ButtonHome>
+          <ButtonPokedex onClick={() => goToPokedex(navigate)}> Pokedéx</ButtonPokedex>
+          <button>Excluir Pokemon</button>
+        </div>
+      )
+    }
+  }
   return (
-    <div>
+    <ContainerHeader>
+      
+      <DivImg>
       <img src={Logo} alt="Logo Pokedex" />
+      </DivImg>
+
       {buttonHeader()}
-    </div>
+
+    </ContainerHeader>
   )
 }
 
