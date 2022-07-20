@@ -11,7 +11,7 @@ function Router() {
         <Routes>
             <Route index exact path="/" element={<Home />} />
             <Route path="/Pokedex" element={<Pokedex />} />
-            <Route path="/DetailsPoke" element={<DetailsPoke />} />
+            <Route path="/DetailsPoke/:name" element={<DetailsPoke />} />
         </Routes>
     </BrowserRouter>
     )
