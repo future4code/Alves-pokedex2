@@ -104,3 +104,12 @@ margin-left: 15rem ;
 margin-bottom: 0.813rem ;
 margin-right: 1.375rem;
 `
+
+export const ContainerImg = styled.div`
+position: absolute;
+width: 100px;
+height: 100px;
+border: black 1px solid;
+margin-bottom: 70x;
+margin-left: 15rem ;
+`
