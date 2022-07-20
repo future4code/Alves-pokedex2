@@ -9,18 +9,37 @@ const Cards = () => {
 const navigate = useNavigate()
 const {pokedex,setPokedex, pokemonListDetails, setPokemonListDetails} = useContext(GlobalContext)
 
-const addToPokedex = (newPokemon) => {
+// const addToPokedex = (newPokemon) => {
+//   const novoArray = [pokemonListDetails]
+//   const indicePokemon = novoArray.findIndex((pokemon) => pokemon.id===newPokemon.id)
+//   novoArray.splice(indicePokemon, 1)
+//   setPokemonListDetails(novoArray)
+//   setPokedex([...pokedex, newPokemon])
 
+// }
+
+const addToPokedex = (newPokemon, id) => {
   setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
   setPokedex([...pokedex,newPokemon])
-
+  localStorage.setItem('id', id)
 }
 
 // .filter((pokemon)=>{
       
 // }) Filtrar antes do map
 
+
+// filter((pokemon)=>{
+//   const id = localStorage.getItem("id")
+//   if (id === pokemon.id) {
+//     return false
+//   } else {
+//     return true
+//   }
+// }).
+
     const listOfCards = pokemonListDetails?.map((pokemon)=>{
+
       return (
         <ContainerCard key={pokemon.name}>
           <Id>
@@ -39,7 +58,7 @@ const addToPokedex = (newPokemon) => {
           <TextDetails onClick={()=>{goToDetailsPoke(navigate,pokemon.name)}}>
             Detalhes
           </TextDetails>
-          <Button onClick={()=>{addToPokedex(pokemon)}}>Capturar!</Button>
+          <Button onClick={()=>{addToPokedex(pokemon,pokemon.id)}}>Capturar!</Button>
         </ContainerCard>
       )
     })
