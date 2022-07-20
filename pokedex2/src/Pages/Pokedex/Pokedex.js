@@ -31,7 +31,7 @@ const Pokedex = () => {
               <TextType >{pokemon.types[0].type.name}</TextType>
             </Type>
             <ContainerImg>
-              <img src={pokemon.sprites.front_default}/>
+              <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]}/>
             </ContainerImg>
             <TextDetails onClick={()=>{goToDetailsPoke(navigate,pokemon.name)}}>
               Detalhes
