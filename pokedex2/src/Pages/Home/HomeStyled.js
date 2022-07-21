@@ -5,4 +5,16 @@ background-color: #5E5E5E;
 width: 100vw;
 height: 100vh;
 display: flex;
+flex-direction: column;
+h1{
+    color: white;
+    margin-top: 3.75rem;
+    margin-left: 2.5rem;
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 700;
+    margin-bottom: 53px;
+    font-family: 'Poppins';
+font-style: normal;
+}
 `

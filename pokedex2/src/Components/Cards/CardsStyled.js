@@ -1,4 +1,12 @@
 import styled from "styled-components";
+import PokeBola from '../../Assets/pokebola.png'
+
+export const BigContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 3rem;
+margin-left: 40px;
+`
 
 export const ContainerCard = styled.div`
 width: 25rem;
@@ -6,8 +14,10 @@ height: 13.125rem;
 background: #729F92;
 border-radius:0.75rem;
 display: flex;
-gap: 3rem;
-flex-wrap: wrap;
+background-image: url(${PokeBola});
+background-repeat: no-repeat;
+background-size: 13rem;
+background-position: right;
 
 `
 export const Id = styled.div`
@@ -48,8 +58,6 @@ width: 6.188rem;
 height: 1.938rem;
 margin-left: 1.438rem;
 margin-top: 5.563rem;
-
-
 border-radius: 0.5rem;
 `
 
@@ -81,22 +89,20 @@ export const TextDetails = styled.div`
 position: absolute;
 width: 4.625rem;
 height: 1.5rem;
-padding-top:10.375rem ;
+padding-top:9rem ;
 padding-left:1.438rem;
-padding-bottom: 1.25rem ;
+padding-bottom: 10rem;
 padding-right: 21.438rem;
+h3{
+cursor: pointer;
+font-weight: bold;
+text-decoration-line: underline;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 1rem;
 line-height:1.5rem;
-text-decoration-line: underline;
 color: #FFFFFF;
-flex: none;
-order: 0;
-flex-grow: 0;
-h3{
-    cursor: pointer;
 }
 `
 
@@ -114,10 +120,12 @@ margin-right: 1.375rem;
 `
 
 export const ContainerImg = styled.div`
-position: absolute;
-width: 100px;
-height: 100px;
-border: black 1px solid;
-margin-bottom: 70x;
 margin-left: 15rem ;
+margin-bottom: 33rem;
+border: 2px solid red;
+img{
+  width: 10rem;
+  //margin-bottom: 3rem;
+
+}
 `

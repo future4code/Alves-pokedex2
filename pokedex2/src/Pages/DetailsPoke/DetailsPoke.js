@@ -25,25 +25,34 @@ useEffect(()=>{
   getPokemonDetail()
 },[])
 
-
+console.log(details)
   return (
     <BigContainer>
       <Titulo>
-        <h1>DetailsPoke</h1>
+        <h1>Detalhes</h1>
       </Titulo>
       <DetailsContainer>
         <CardUm>
-        <h3>{details?.name}</h3>
-
+ <img src={details?.sprites?.front_default} /> 
         </CardUm>
         <CardDois>
-
+     <img src={details?.sprites?.back_default} /> 
         </CardDois>
         <CardTres>
-
+          <h2>Base Stats</h2>
+  {details.stats && details.stats.map((stat,index) => {
+             return (<div>
+              <p key={index}> {stat.stat.name}: {stat.base_stat}  </p> 
+              </div>
+            )
+          })}
         </CardTres>
         <CardQuatro>
-
+            <h2>Moves</h2>
+            {details.moves && details.moves.map((move, index) => {
+            return ( <p key={index}> {move.move.name} </p> 
+            )
+            })}
         </CardQuatro>
       </DetailsContainer>
     </BigContainer>

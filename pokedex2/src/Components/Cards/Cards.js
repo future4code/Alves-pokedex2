@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { goToDetailsPoke } from '../../Router/Coordinator'
-import { ContainerCard, Id, Name, Type, TextType, Icon, TextDetails, Button, ContainerImg } from './CardsStyled'
-import poisonIcon from "../../Assets/poison-icon.png"
+import { ContainerCard, BigContainer, Id, Name, Type, TextType, Icon, TextDetails, Button, ContainerImg } from './CardsStyled'
 import { GlobalContext } from '../Global/GlobalContext'
 import DefineTypes from '../Types/Types'
 
@@ -21,9 +20,10 @@ const Cards = () => {
 
   const addToPokedex = (newPokemon, id) => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
-    setPokedex([...pokedex, newPokemon])
+    const newPokedex = [...pokedex, newPokemon]
+    setPokedex(newPokedex)
    localStorage.setItem(`chave ${id}`, id)
-   localStorage.setItem("pokedex",pokedex)
+   localStorage.setItem("pokedex", JSON.stringify(newPokedex))
   }
 
   /* const addToPokedex = () => {
@@ -94,7 +94,7 @@ const Cards = () => {
           })}
         </Type>
         <ContainerImg>
-          <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]} />
+          <img src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]} />
         </ContainerImg>
         <TextDetails>
           <h3 onClick={() => { goToDetailsPoke(navigate, pokemon.name) }}>Detalhes</h3>
@@ -107,9 +107,9 @@ const Cards = () => {
   })
 
   return (
-    <ContainerCard>
+    <BigContainer>
       {listOfCards}
-    </ContainerCard>
+    </BigContainer>
   )
 }
 

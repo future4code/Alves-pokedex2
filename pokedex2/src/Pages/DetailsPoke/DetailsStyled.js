@@ -41,6 +41,9 @@ top: 26px;
 background: url(image.png), #FFFFFF;
 border: 2px solid #FFFFFF;
 border-radius: 8px;
+img{
+    width: 17rem;
+}
 `
 
 export const CardDois = styled.div`
@@ -52,6 +55,9 @@ top: 355px;
 background: #FFFFFF;
 border: 2px solid #FFFFFF;
 border-radius: 8px;
+img{
+    width: 17rem;
+}
 `
 export const CardTres = styled.div`
 position: absolute;
@@ -59,7 +65,6 @@ width: 343px;
 height: 613px;
 left: 360px;
 top: 24px;
-
 background: #FFFFFF;
 border-radius: 12px;
 `
@@ -69,7 +74,7 @@ width: 292px;
 height: 453px;
 left: 771px;
 top: 184px;
-
 background: #FFFFFF;
 border-radius: 8px;
+overflow-y: auto
 `

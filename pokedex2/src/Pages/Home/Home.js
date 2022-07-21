@@ -1,25 +1,27 @@
-import React, {useContext, useEffect} from 'react'
-import {ContainerHome} from './HomeStyled'
+import React, { useContext, useEffect } from 'react'
+import { ContainerHome } from './HomeStyled'
 import Cards from '../../Components/Cards/Cards'
 import { GlobalContext } from '../../Components/Global/GlobalContext'
 
 const Home = () => {
 
-  const {getPokemonByQuantity, getPokemonDetail,pokemonListName} = useContext(GlobalContext)
+  const { getPokemonByQuantity, getPokemonDetail, pokemonListName } = useContext(GlobalContext)
 
-  useEffect(()=>{
+  useEffect(() => {
     getPokemonByQuantity()
-  },[])
+  }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     getPokemonDetail()
-  },[pokemonListName])
-  
-  
+  }, [pokemonListName])
+
+
   return (
     <ContainerHome>
       <h1>Todos Pokémons</h1>
-      <Cards/>
+      <>
+        <Cards />
+      </>
     </ContainerHome>
   )
 }
