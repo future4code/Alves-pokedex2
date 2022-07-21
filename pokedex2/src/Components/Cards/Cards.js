@@ -78,7 +78,7 @@ const Cards = () => {
     }
   }).map((pokemon) => {
     return (
-      <ContainerCard key={pokemon.name}>
+      <ContainerCard key={pokemon.name} typePokemon={pokemon.types[0].type.name}>
         <Id>
           #{pokemon.id}
         </Id>
