@@ -5,6 +5,7 @@ width: 25rem;
 height: 13.125rem;
 background: #729F92;
 border-radius:0.75rem;
+display: flex;
 `
 export const Id = styled.div`
 position: absolute;
@@ -44,8 +45,8 @@ width: 6.188rem;
 height: 1.938rem;
 margin-left: 1.438rem;
 margin-top: 5.563rem;
-background: #AD61AE;
-border: 1px dashed rgba(255, 255, 255, 0.47);
+
+
 border-radius: 0.5rem;
 `
 
@@ -67,9 +68,10 @@ flex-grow: 0;
 `
 
 export const Icon = styled.img`
-padding-top: 0.313rem;
+padding-top: 0.1rem;
 padding-left:0.5rem;
 padding-bottom: 0.375rem;
+width: 5rem;
 `
 
 export const TextDetails = styled.div`
