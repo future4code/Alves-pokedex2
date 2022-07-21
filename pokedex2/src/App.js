@@ -4,12 +4,15 @@ import Cards from "./Components/Cards/Cards";
 import DetailsPoke from "./Pages/DetailsPoke/DetailsPoke";
 import Pokedex from "./Pages/Pokedex/Pokedex";
 import GlobalState from "./Components/Global/GlobalState";
+import {ContainerApp} from './AppStyled'
 
 function App() {
   return (
-    <GlobalState>
-      <Router />
-    </GlobalState>
+
+      <GlobalState>
+        <Router />
+      </GlobalState>
+
   );
 }
 

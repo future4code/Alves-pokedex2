@@ -9,14 +9,6 @@ const Cards = () => {
   const navigate = useNavigate()
   const { pokedex, setPokedex, pokemonListDetails, setPokemonListDetails } = useContext(GlobalContext)
 
-  /*   const addToPokedex = (newPokemon) => {
-      const novoArray = [...pokemonListDetails]
-      const indicePokemon = novoArray.findIndex((pokemon) => pokemon.id === newPokemon.id)
-      novoArray.splice(indicePokemon, 1)
-      setPokemonListDetails(nvoArray)
-      setPokedex([...pokedex, newPokemon])
-  
-    } */
 
   const addToPokedex = (newPokemon, id) => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
@@ -26,48 +18,6 @@ const Cards = () => {
    localStorage.setItem("pokedex", JSON.stringify(newPokedex))
   }
 
-  /* const addToPokedex = () => {
-    const position = pokedex.findIndex((item) => {
-      return item === pokemon.name
-    })
-    if (position === -1){
-      setPokedex([...pokedex, pokemon.name])
-    }
-  } */
-
-  /* let localPokedex = JSON.parse(localStorage.getItem('pokedex'))
-  
-  useEffect(() => {
-    if(pokedex) {
-  
-        const newPokes = pokemonListDetails.filter( x => { 
-            return JSON.stringify(pokedex).indexOf(JSON.stringify(x)) < 0
-        })
-        setPokemonListDetails(newPokes)
-    }
-  }, [pokemonListDetails]) */
-
-  /* useEffect(() => {
-      const teste = JSON.parse(localStorage.getItem('pokemonListDetails'));
-      if (teste) {
-        setPokemonListDetails(teste);   
-      }     
-    }, []);
-    
-    useEffect(() => {
-      localStorage.setItem('pokemonListDetails', JSON.stringify(pokemonListDetails));
-    }, [pokemonListDetails]); 
-  
-   */
-
-  /*   */
-  // .filter((pokemon)=>{
-
-  // }) Filtrar antes do map
-
-  //console.log(pokemon.id)
-  /*   */
-  // console.log(localStorage)
   console.log(pokedex)
   const listOfCards = pokemonListDetails?.filter((pokemon) => {
     const id = localStorage.getItem(`chave ${pokemon.id}`)

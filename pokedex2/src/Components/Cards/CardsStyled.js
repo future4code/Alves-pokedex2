@@ -138,12 +138,10 @@ margin-right: 1.375rem;
 
 export const ContainerImg = styled.div`
 margin-left: 15rem ;
-
 img{
   position: relative;
-  width: 15rem;
+  max-width: 12rem;
   right: 1.7rem;
-  bottom: 70px;
-
+  bottom: 52px;
 }
 `

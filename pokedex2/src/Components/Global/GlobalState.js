@@ -8,8 +8,6 @@ export default function GlobalState(props) {
     const [pokemonListName, setPokemonListName] = useState([])
     const [pokemonListDetails, setPokemonListDetails] = useState([])
 
-/* const localPokedex = JSON.parse(localStorage.getItem(`chave`)) */
-
     const getPokemonByQuantity = () =>{
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
         .then((res)=>{
@@ -22,14 +20,10 @@ export default function GlobalState(props) {
 
     const getPokemonDetail = () =>{
         const list = []
-/*         if (localPokedex) {
-            setPokedex(localPokedex)
-        } */
         pokemonListName.forEach((pokemon)=>{
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
             .then((res)=>{
                 list.push(res.data)
-                // setPokemonListDetails(list)
                 if (list.length===20) {
                     setPokemonListDetails(list)
                 }
@@ -41,18 +35,11 @@ export default function GlobalState(props) {
         })
     }
 
-    // const poke = localStorage.getItem("pokedex")
-  
-    
      useEffect(()=>{
          const testeNovo = localStorage.getItem("pokedex")
          const novaPoke = JSON.parse(testeNovo)
          novaPoke && setPokedex(novaPoke)
-        /* const poke = JSON.stringify(pokedex)
-        poke && localStorage.setItem('pokedex', poke) */
   },[])
-    
-    
     
   
     const Provider = GlobalContext.Provider

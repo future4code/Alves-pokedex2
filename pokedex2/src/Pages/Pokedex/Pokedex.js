@@ -16,24 +16,6 @@ const Pokedex = () => {
 
   }
 
-  // useEffect(()=>{
-  //     if(pokedex === []){
-  //       const localPokedex = JSON.parse(localStorage.getItem(`pokedex`))
-  //       console.log("aqui",localPokedex)
-  //         setPokedex(localPokedex)
-  //     }
-  //     },[])
-
-  /*  .filter((pokemon)=>{
-          const id = localStorage.getItem(`chave ${pokemon.id}`)
-          console.log(id)
-          console.log(pokemon.id)
-          if (id === `${pokemon.id}`) {
-           return false
-          } else {
-            return true
-           }
-         }) */
 
   console.log(pokedex)
   const id = localStorage.getItem(`chave 1`)
@@ -41,7 +23,6 @@ const Pokedex = () => {
   const listOfCards = pokedex?.map((pokemon) => {
     if (localStorage.getItem(`chave ${pokemon.id}`)) {
       return (
-
         <ContainerCard key={pokemon.name} typePokemon={pokemon.types[0].type.name}>
           <Id>
             #{pokemon.id}
@@ -60,12 +41,11 @@ const Pokedex = () => {
           <ContainerImg>
             <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]} />
           </ContainerImg>
-          <TextDetails onClick={() => { goToDetailsPoke(navigate, pokemon.name) }}>
-            Detalhes
+          <TextDetails >
+            <h3 onClick={() => { goToDetailsPoke(navigate, pokemon.name) }}>Detalhes</h3>
           </TextDetails>
           <Button onClick={() => { removeFromPokedex(pokemon, pokemon.id) }}>Excluir</Button>
         </ContainerCard>
-
       )
     } else {
       return (
