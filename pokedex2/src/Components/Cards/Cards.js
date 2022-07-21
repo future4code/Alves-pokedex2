@@ -23,7 +23,7 @@ const Cards = () => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
     setPokedex([...pokedex, newPokemon])
    localStorage.setItem(`chave ${id}`, id)
-    // console.log(id)
+   localStorage.setItem("pokedex",pokedex)
   }
 
   /* const addToPokedex = () => {
@@ -71,8 +71,6 @@ const Cards = () => {
   console.log(pokedex)
   const listOfCards = pokemonListDetails?.filter((pokemon) => {
     const id = localStorage.getItem(`chave ${pokemon.id}`)
-    console.log(id)
-    console.log(pokemon.id)
     if (id === `${pokemon.id}`) {
       return false
     } else {
@@ -88,10 +86,10 @@ const Cards = () => {
           {pokemon.name}
         </Name>
         <Type>
-          {pokemon.types && pokemon.types.map((type) => {
+          {pokemon.types && pokemon.types.map((type,index) => {
             let pokemonType = type.type.name
             return (
-              <DefineTypes pokemonType={pokemonType} />
+              <DefineTypes key={index} pokemonType={pokemonType} />
             )
           })}
         </Type>

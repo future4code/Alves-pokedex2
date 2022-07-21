@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {useNavigate} from "react-router-dom"
 import { GlobalContext } from '../../Components/Global/GlobalContext'
 import { ContainerCard, Id, Name, Type, TextType, Icon, TextDetails, Button , ContainerImg} from './PokedexStyled'
@@ -9,12 +9,22 @@ const Pokedex = () => {
   const navigate = useNavigate()
   const {pokedex,setPokedex, pokemonListDetails, setPokemonListDetails} = useContext(GlobalContext)
   
-  const removeFromPokedex = (newPokemon) => {
+  const removeFromPokedex = (newPokemon, id) => {
   
     setPokedex(pokedex.filter(pokemon => newPokemon.name !== pokemon.name))
     setPokemonListDetails([newPokemon,...pokemonListDetails])
+    localStorage.removeItem(`chave ${id}`)
   
   }
+
+// useEffect(()=>{
+//     if(pokedex === []){
+//       const localPokedex = JSON.parse(localStorage.getItem(`pokedex`))
+//       console.log("aqui",localPokedex)
+//         setPokedex(localPokedex)
+//     }
+//     },[])
+
 /*  .filter((pokemon)=>{
         const id = localStorage.getItem(`chave ${pokemon.id}`)
         console.log(id)
@@ -32,8 +42,7 @@ const Pokedex = () => {
       const listOfCards = pokedex?.map((pokemon)=>{
         if (localStorage.getItem(`chave ${pokemon.id}`)) {
           return (
-            <div>
-              <h1>Pokedex</h1>
+            
             <ContainerCard key={pokemon.name}>
               <Id>
                 #{pokemon.id}
@@ -51,9 +60,9 @@ const Pokedex = () => {
               <TextDetails onClick={()=>{goToDetailsPoke(navigate,pokemon.name)}}>
                 Detalhes
               </TextDetails>
-              <Button onClick={()=>{removeFromPokedex(pokemon)}}>Excluir</Button>
+              <Button onClick={()=>{removeFromPokedex(pokemon, pokemon.id)}}>Excluir</Button>
             </ContainerCard>
-            </div>
+      
           )
         } else {
           return (

@@ -41,6 +41,16 @@ const localPokedex = JSON.parse(localStorage.getItem(`chave`))
         })
     }
 
+    // const poke = localStorage.getItem("pokedex")
+  
+    
+    // useEffect(()=>{
+    // if(poke){
+    //     setPokedex(poke)
+    // }
+    // },[])
+    
+    
     
   
     const Provider = GlobalContext.Provider
