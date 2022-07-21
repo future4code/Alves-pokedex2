@@ -6,6 +6,9 @@ height: 13.125rem;
 background: #729F92;
 border-radius:0.75rem;
 display: flex;
+gap: 3rem;
+flex-wrap: wrap;
+
 `
 export const Id = styled.div`
 position: absolute;
@@ -92,6 +95,9 @@ color: #FFFFFF;
 flex: none;
 order: 0;
 flex-grow: 0;
+h3{
+    cursor: pointer;
+}
 `
 
 export const Button = styled.button`

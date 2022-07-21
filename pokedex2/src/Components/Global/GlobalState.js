@@ -8,9 +8,10 @@ export default function GlobalState(props) {
     const [pokemonListName, setPokemonListName] = useState([])
     const [pokemonListDetails, setPokemonListDetails] = useState([])
 
+const localPokedex = JSON.parse(localStorage.getItem(`chave`))
 
     const getPokemonByQuantity = () =>{
-        axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+        axios.get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
         .then((res)=>{
             setPokemonListName(res.data.results)
         })
@@ -21,6 +22,9 @@ export default function GlobalState(props) {
 
     const getPokemonDetail = () =>{
         const list = []
+        if (localPokedex) {
+            setPokedex(localPokedex)
+        }
         pokemonListName.forEach((pokemon)=>{
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
             .then((res)=>{
