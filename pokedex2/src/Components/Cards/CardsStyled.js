@@ -1,13 +1,40 @@
 import styled from "styled-components";
+import PokeBola from '../../Assets/pokebola.svg'
+
+export const BigContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 3rem;
+margin-left: 40px;
+`
 
 export const ContainerCard = styled.div`
 width: 25rem;
 height: 13.125rem;
-background: #729F92;
+background: ${props => props.typePokemon === "grass" && "#729F92;"};
+background: ${props => props.typePokemon === "fire" && "#EAAB7D;"};
+background: ${props => props.typePokemon === "water" && "#71C3FF;"};
+background: ${props => props.typePokemon === "bug" && "#76A866"};
+background: ${props => props.typePokemon === "normal" && "#BF9762;"};
+background: ${props => props.typePokemon === "poison" && "#D1A3D0"};
+background: ${props => props.typePokemon === "electric" && "#FFC95E"};
+background: ${props => props.typePokemon === "ground" && "#B6866F"};
+background: ${props => props.typePokemon === "fairy" && "#BD7886"};
+background: ${props => props.typePokemon === "fighting" && "#B0385A"};
+background: ${props => props.typePokemon === "psychic" && "#E05E65"};
+background: ${props => props.typePokemon === "rock" && "#9E8F65"};
+background: ${props => props.typePokemon === "ghost" && "#7084CA"};
+background: ${props => props.typePokemon === "ice" && "#48A497"};
+background: ${props => props.typePokemon === "dragon" && "#004170;"};
+background: ${props => props.typePokemon === "steel" && "#B7B9D0"};
+background: ${props => props.typePokemon === "dark" && "#55433C"};
+background: ${props => props.typePokemon === "flying" && "#A891EC"};
 border-radius:0.75rem;
 display: flex;
-gap: 3rem;
-flex-wrap: wrap;
+background-image: url(${PokeBola});
+background-repeat: no-repeat;
+background-size: 13rem;
+background-position: right;
 
 `
 export const Id = styled.div`
@@ -48,8 +75,6 @@ width: 6.188rem;
 height: 1.938rem;
 margin-left: 1.438rem;
 margin-top: 5.563rem;
-
-
 border-radius: 0.5rem;
 `
 
@@ -81,22 +106,20 @@ export const TextDetails = styled.div`
 position: absolute;
 width: 4.625rem;
 height: 1.5rem;
-padding-top:10.375rem ;
+padding-top:9rem ;
 padding-left:1.438rem;
-padding-bottom: 1.25rem ;
+padding-bottom: 10rem;
 padding-right: 21.438rem;
+h3{
+cursor: pointer;
+font-weight: bold;
+text-decoration-line: underline;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 1rem;
 line-height:1.5rem;
-text-decoration-line: underline;
 color: #FFFFFF;
-flex: none;
-order: 0;
-flex-grow: 0;
-h3{
-    cursor: pointer;
 }
 `
 
@@ -114,10 +137,11 @@ margin-right: 1.375rem;
 `
 
 export const ContainerImg = styled.div`
-position: absolute;
-width: 100px;
-height: 100px;
-border: black 1px solid;
-margin-bottom: 70x;
 margin-left: 15rem ;
+img{
+  position: relative;
+  max-width: 12rem;
+  right: 1.7rem;
+  bottom: 52px;
+}
 `

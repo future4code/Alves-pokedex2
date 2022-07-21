@@ -4,11 +4,9 @@ import { GlobalContext } from "./GlobalContext";
 
 
 export default function GlobalState(props) {
-    const [pokedex, setPokedex] = useState([])
+    const [pokedex, setPokedex] = useState()
     const [pokemonListName, setPokemonListName] = useState([])
     const [pokemonListDetails, setPokemonListDetails] = useState([])
-
-const localPokedex = JSON.parse(localStorage.getItem(`chave`))
 
     const getPokemonByQuantity = () =>{
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
@@ -22,14 +20,10 @@ const localPokedex = JSON.parse(localStorage.getItem(`chave`))
 
     const getPokemonDetail = () =>{
         const list = []
-        if (localPokedex) {
-            setPokedex(localPokedex)
-        }
         pokemonListName.forEach((pokemon)=>{
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
             .then((res)=>{
                 list.push(res.data)
-                // setPokemonListDetails(list)
                 if (list.length===20) {
                     setPokemonListDetails(list)
                 }
@@ -41,16 +35,11 @@ const localPokedex = JSON.parse(localStorage.getItem(`chave`))
         })
     }
 
-    // const poke = localStorage.getItem("pokedex")
-  
-    
-    // useEffect(()=>{
-    // if(poke){
-    //     setPokedex(poke)
-    // }
-    // },[])
-    
-    
+     useEffect(()=>{
+         const testeNovo = localStorage.getItem("pokedex")
+         const novaPoke = JSON.parse(testeNovo)
+         novaPoke && setPokedex(novaPoke)
+  },[])
     
   
     const Provider = GlobalContext.Provider
