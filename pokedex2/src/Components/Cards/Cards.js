@@ -4,6 +4,7 @@ import { goToDetailsPoke } from '../../Router/Coordinator'
 import { ContainerCard, Id, Name, Type, TextType, Icon, TextDetails, Button , ContainerImg} from './CardsStyled'
 import poisonIcon from "../../Assets/poison-icon.png"
 import { GlobalContext } from '../Global/GlobalContext'
+import DefineTypes from '../Types/Types'
 
 const Cards = () => {
 const navigate = useNavigate()
@@ -81,14 +82,20 @@ useEffect(() => {
             {pokemon.name}
           </Name>
           <Type>
-            <Icon src={poisonIcon} width={20} height={20} />
-            <TextType >{pokemon.types[0].type.name}</TextType>
+            {pokemon.types && pokemon.types.map((type) => {
+              let pokemonType = type.type.name
+              return (
+                <DefineTypes pokemonType = {pokemonType} />
+              )
+            })}
+           {/*  <Icon src={poisonIcon} width={20} height={20} />
+            <TextType >{pokemon.types[0].type.name}</TextType> */}
           </Type>
           <ContainerImg>
             <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]}/>
           </ContainerImg>
-          <TextDetails onClick={()=>{goToDetailsPoke(navigate,pokemon.name)}}>
-            Detalhes
+          <TextDetails>
+            <button onClick={()=>{goToDetailsPoke(navigate,pokemon.name)}}>Detalhes</button>
           </TextDetails>
           <Button onClick={()=>{addToPokedex(pokemon,pokemon.id)}}>Capturar!</Button>
         </ContainerCard>
