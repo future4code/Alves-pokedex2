@@ -11,7 +11,7 @@ h1{
 width: 13.75rem;
 height: 4.5rem;
 padding-left: 2.5rem;
-padding-top: 13.75rem;
+padding-top: 3.75rem;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;

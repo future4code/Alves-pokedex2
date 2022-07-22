@@ -1,6 +1,24 @@
 import styled from "styled-components";
 import PokeBola from '../../Assets/pokebola.svg'
 
+export const BigContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 3rem;
+margin-left: 40px;
+h1{
+color: white;
+margin-top: 3.75rem;
+margin-left: 2.5rem;
+font-size: 48px;
+line-height: 72px;
+font-weight: 700;
+margin-bottom: 53px;
+font-family: 'Poppins';
+font-style: normal;
+}
+`
+
 export const ContainerCard = styled.div`
 width: 25rem;
 height: 13.125rem;

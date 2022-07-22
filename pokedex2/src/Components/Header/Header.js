@@ -15,23 +15,20 @@ const Header = () => {
       return (<ButtonHome onClick={() => goToHome(navigate)}>  <MdArrowBackIosNew />Todos Pokémons</ButtonHome>)
     } else {
       return (
-        <div>
+        <>
           <ButtonHome onClick={() => goToHome(navigate)}> <MdArrowBackIosNew />Todos Pokémons</ButtonHome>
-          <ButtonPokedex onClick={() => goToPokedex(navigate)}> Pokedéx</ButtonPokedex>
-          <button>Excluir Pokemon</button>
-        </div>
+          <ButtonPokedex onClick={() => goToPokedex(navigate)}> Pokedéx</ButtonPokedex> 
+    {/*       <button>Excluir Pokemon</button> */}
+        </>
       )
     }
   }
   return (
     <ContainerHeader>
-      
       <DivImg>
       <img src={Logo} alt="Logo Pokedex" />
       </DivImg>
-
       {buttonHeader()}
-
     </ContainerHeader>
   )
 }
