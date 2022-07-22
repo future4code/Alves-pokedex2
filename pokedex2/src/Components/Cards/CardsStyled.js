@@ -6,6 +6,9 @@ display: flex;
 flex-wrap: wrap;
 gap: 3rem;
 margin-left: 40px;
+@media(max-width: 800px) {
+  margin-left: 0px;
+}
 `
 
 export const ContainerCard = styled.div`
@@ -35,6 +38,10 @@ background-image: url(${PokeBola});
 background-repeat: no-repeat;
 background-size: 13rem;
 background-position: right;
+@media(max-width: 800px) {
+  width: 22rem;
+height: 13.125rem;
+  }
 
 `
 export const Id = styled.div`
@@ -128,12 +135,17 @@ position: absolute;
 width: 9.125rem;
 height: 2.375rem;
 background: #FFFFFF;
+cursor: pointer;
 border-radius: 0.5rem;
 border: none;
 margin-top: 9.938rem ;
 margin-left: 15rem ;
 margin-bottom: 0.813rem ;
 margin-right: 1.375rem;
+@media(max-width: 800px) {
+  margin-left: 12rem ;
+
+  }
 `
 
 export const ContainerImg = styled.div`
@@ -144,4 +156,10 @@ img{
   right: 1.7rem;
   bottom: 52px;
 }
+@media(max-width: 800px) {
+  margin-left: 14rem ;
+  img{
+  max-width: 10rem;
+}
+  }
 `
