@@ -16,6 +16,7 @@ const Header = () => {
     } else {
       return (
         <>
+        
           <ButtonHome onClick={() => goToHome(navigate)}> <MdArrowBackIosNew />Todos Pokémons</ButtonHome>
           <ButtonPokedex onClick={() => goToPokedex(navigate)}> Pokedéx</ButtonPokedex> 
     {/*       <button>Excluir Pokemon</button> */}

@@ -9,7 +9,6 @@ const Cards = () => {
   const navigate = useNavigate()
   const { pokedex, setPokedex, pokemonListDetails, setPokemonListDetails } = useContext(GlobalContext)
 
-
   const addToPokedex = (newPokemon, id) => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
     const newPokedex = [...pokedex, newPokemon]
@@ -51,11 +50,8 @@ const Cards = () => {
         </TextDetails>
         <Button onClick={() => { addToPokedex(pokemon, pokemon.id) }}>Capturar!</Button>
       </ContainerCard>
-
     )
-
   })
-
   return (
     <BigContainer>
       {listOfCards}
