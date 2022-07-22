@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import { GlobalContext } from '../../Components/Global/GlobalContext'
 import { ContainerCard, Id, BigContainer, Name, Type, TextType, Icon, TextDetails, Button, ContainerImg } from './PokedexStyled'
-import { goToDetailsPoke } from '../../Router/Coordinator'
+import { goToPokedexDetails } from '../../Router/Coordinator'
 import DefineTypes from '../../Components/Types/Types'
 import { ContainerHome } from '../Home/HomeStyled'
 
@@ -41,7 +41,7 @@ const Pokedex = () => {
             <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]} />
           </ContainerImg>
           <TextDetails >
-            <h3 onClick={() =>  goToDetailsPoke(navigate, pokemon.name) }>Detalhes</h3>
+            <h3 onClick={() =>  goToPokedexDetails(navigate, pokemon.name) }>Detalhes</h3>
           </TextDetails>
           <Button onClick={() =>  removeFromPokedex(pokemon, pokemon.id) }>Excluir</Button>
         </ContainerCard>

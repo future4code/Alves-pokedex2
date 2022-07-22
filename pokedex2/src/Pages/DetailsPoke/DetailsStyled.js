@@ -22,7 +22,25 @@ color: #FFFFFF;
 `
 
 export const DetailsContainer = styled.div`
-background-color: #729f92;
+${props => console.log('props', props)}
+background-color: ${props => props.typePokemon === "grass" && "#729F92;"};
+background-color: ${props => props.typePokemon === "fire" && "#EAAB7D;"};
+background-color: ${props => props.typePokemon === "water" && "#71C3FF;"};
+background-color: ${props => props.typePokemon === "bug" && "#76A866"};
+background-color: ${props => props.typePokemon === "normal" && "#BF9762;"};
+background-color: ${props => props.typePokemon === "poison" && "#D1A3D0"};
+background-color: ${props => props.typePokemon === "electric" && "#FFC95E"};
+background-color: ${props => props.typePokemon === "ground" && "#B6866F"};
+background-color: ${props => props.typePokemon === "fairy" && "#BD7886"};
+background-color: ${props => props.typePokemon === "fighting" && "#B0385A"};
+background-color: ${props => props.typePokemon === "psychic" && "#E05E65"};
+background-color: ${props => props.typePokemon === "rock" && "#9E8F65"};
+background-color: ${props => props.typePokemon === "ghost" && "#7084CA"};
+background-color: ${props => props.typePokemon === "ice" && "#48A497"};
+background-color: ${props => props.typePokemon === "dragon" && "#004170;"};
+background-color: ${props => props.typePokemon === "steel" && "#B7B9D0"};
+background-color: ${props => props.typePokemon === "dark" && "#55433C"};
+background-color: ${props => props.typePokemon === "flying" && "#A891EC"};
 margin-left: 1.6rem;
 margin-right: 1.6rem;
 position: absolute;
