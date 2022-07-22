@@ -136,6 +136,7 @@ color: #FFFFFF;
 export const Button = styled.button`
 position: absolute;
 width: 9.125rem;
+cursor: pointer;
 height: 2.375rem;
 background: #FF6262;
 border-radius: 0.5rem;

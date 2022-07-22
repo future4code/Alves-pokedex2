@@ -9,16 +9,14 @@ const Cards = () => {
   const navigate = useNavigate()
   const { pokedex, setPokedex, pokemonListDetails, setPokemonListDetails } = useContext(GlobalContext)
 
-
   const addToPokedex = (newPokemon, id) => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
     const newPokedex = [...pokedex, newPokemon]
     setPokedex(newPokedex)
    localStorage.setItem(`chave ${id}`, id)
    localStorage.setItem("pokedex", JSON.stringify(newPokedex))
-  }
+  }  
 
-  console.log(pokedex)
   const listOfCards = pokemonListDetails?.filter((pokemon) => {
     const id = localStorage.getItem(`chave ${pokemon.id}`)
     if (id === `${pokemon.id}`) {
@@ -51,11 +49,8 @@ const Cards = () => {
         </TextDetails>
         <Button onClick={() => { addToPokedex(pokemon, pokemon.id) }}>Capturar!</Button>
       </ContainerCard>
-
     )
-
   })
-
   return (
     <BigContainer>
       {listOfCards}
