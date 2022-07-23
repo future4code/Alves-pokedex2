@@ -2,7 +2,7 @@ import React from 'react'
 import Bug from '../../Assets/bug.png'
 import Dark from '../../Assets/dark.png'
 import Dragon from '../../Assets/dragon.png'
-import Eletric from '../../Assets/eletric.png'
+import Electric from '../../Assets/eletric.png'
 import Fairy from '../../Assets/fairy.png'
 import Fighting from '../../Assets/fighting.png'
 import Fire from '../../Assets/fire.png'
@@ -45,10 +45,10 @@ const DefineTypes = ({pokemonType}) => {
                 <Icon src={Dragon} />
             </>
         )
-    }if(pokemonType === "eletric") {
+    }if(pokemonType === "electric") {
         return(
             <>
-                <Icon src={Eletric} />
+                <Icon src={Electric} />
             </>
         )
     }if(pokemonType === "fairy") {

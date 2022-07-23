@@ -16,3 +16,22 @@ export const goBack = (navigate) =>{
 export const goToPokedexDetails = (navigate, name) => {
     navigate(`/Pokedex/DetailsPoke/${name}`)
 }
+
+
+export const goToHomeBack = (navigate, number) => {
+    navigate(`/${number}`)
+    if (+number < 0) {
+      navigate(`/${0}`)
+    } else if (window.location.pathname === "/NaN") {
+      navigate(`/0`)
+    }
+  }
+
+export const goToHomeNext = (navigate, number) => {
+    navigate(`/${number}`)
+    if(+number < 0) {
+        navigate(`/${0}`)
+    } else if (window.location.pathname === "/NaN") {
+        navigate(`/30`)
+      }
+}

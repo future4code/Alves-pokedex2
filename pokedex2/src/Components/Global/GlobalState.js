@@ -9,7 +9,7 @@ export default function GlobalState(props) {
     const [pokemonListDetails, setPokemonListDetails] = useState([])
 
     const getPokemonByQuantity = (pagevalue) => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=0`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${pagevalue}`)
             .then((res) => {
                 setPokemonListName(res.data.results)
             })

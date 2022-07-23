@@ -9,4 +9,5 @@ display: flex;
 height: 100vh;
 width: 100vw;
 overflow-x: hidden;
+overflow: auto;
 }`

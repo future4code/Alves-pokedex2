@@ -25,3 +25,21 @@ font-size: 30px;
 }
 }
 `
+
+export const Pagination = styled.div`
+display: flex;
+justify-content: center;
+gap: 0.7rem;
+margin-bottom: 3rem ;
+p {
+    font-family: 'Poppins';
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+    &:hover{
+        color: #5E5E5E;
+        background-color: white;
+    }
+}
+`

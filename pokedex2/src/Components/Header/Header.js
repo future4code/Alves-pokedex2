@@ -3,14 +3,14 @@ import Logo from '../../Assets/logo.png'
 import { GlobalContext } from '../Global/GlobalContext'
 import { useNavigate, useParams } from "react-router-dom"
 import { goToPokedex, goToHome } from '../../Router/Coordinator'
-import { ContainerHeader, ButtonPokedex, ButtonHome, DivImg } from './HeaderStyled'
+import { ContainerHeader, ButtonPokedex, ButtonHome, DivImg , ButtonRemove} from './HeaderStyled'
 import { MdArrowBackIosNew } from 'react-icons/md'
 
 const Header = () => {
   const navigate = useNavigate()
 
   const buttonHeader = () => {
-    if (window.location.pathname === `/`) {
+    if ((window.location.pathname === "/") || (window.location.pathname.includes("/1")) || (window.location.pathname.includes("/3")) || (window.location.pathname.includes("/6")) || (window.location.pathname.includes("/9")) || (window.location.pathname.includes("/0"))|| (window.location.pathname.includes("/2"))) {
       return (<ButtonPokedex onClick={() => goToPokedex(navigate)}>Pokedéx</ButtonPokedex>)
     } else if (window.location.pathname === `/Pokedex`) {
       return (<ButtonHome onClick={() => goToHome(navigate)}>  <MdArrowBackIosNew />Todos Pokémons</ButtonHome>)
@@ -19,7 +19,7 @@ const Header = () => {
       return (
         <>
           <ButtonHome onClick={() => goToHome(navigate)}> <MdArrowBackIosNew />Todos Pokémons</ButtonHome>
-          <ButtonPokedex>Excluir</ButtonPokedex>
+          <ButtonRemove>Excluir</ButtonRemove>
         </>
       )
     } else {
