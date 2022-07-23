@@ -17,7 +17,15 @@ const Cards = () => {
    localStorage.setItem("pokedex", JSON.stringify(newPokedex))
   }  
 
-  const listOfCards = pokemonListDetails?.filter((pokemon) => {
+  const listOfCards = pokemonListDetails?.sort(function (a, b) {
+    if (a.id > b.id) {
+        return 1;
+    }
+    if (a.id < b.id) {
+        return -1;
+    }
+    return 0;
+}).filter((pokemon) => {
     const id = localStorage.getItem(`chave ${pokemon.id}`)
     if (id === `${pokemon.id}`) {
       return false

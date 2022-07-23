@@ -26,7 +26,28 @@ border: none;
 width: 17.938rem;
 height: 4.625rem;
 cursor: pointer;
-margin-left: 80%;
+margin-left: 75%;
+@media(max-width: 800px) {
+width: 10rem;
+height: 3rem;
+margin-top: 2rem;
+  }
+
+`
+export const ButtonRemove = styled.button`
+font-family: 'Poppins', sans-serif;
+background-color: #FF6262;
+font-style: normal;
+font-weight: 700;
+color: #FFFFFF;
+font-size: 24px;
+line-height: 36px;
+border-radius: 8px;
+border: none;
+width: 17.938rem;
+height: 4.625rem;
+cursor: pointer;
+margin-left: 75%;
 @media(max-width: 800px) {
 width: 10rem;
 height: 3rem;

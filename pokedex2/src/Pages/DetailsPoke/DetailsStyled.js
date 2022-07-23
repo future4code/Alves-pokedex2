@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PokeBola from "../../Assets/pokebola.svg"
 
 export const BigContainer = styled.section`
 background-color: #5e5e5e;
@@ -22,7 +23,6 @@ color: #FFFFFF;
 `
 
 export const DetailsContainer = styled.div`
-${props => console.log('props', props)}
 background-color: ${props => props.typePokemon === "grass" && "#729F92;"};
 background-color: ${props => props.typePokemon === "fire" && "#EAAB7D;"};
 background-color: ${props => props.typePokemon === "water" && "#71C3FF;"};
@@ -41,10 +41,14 @@ background-color: ${props => props.typePokemon === "dragon" && "#004170;"};
 background-color: ${props => props.typePokemon === "steel" && "#B7B9D0"};
 background-color: ${props => props.typePokemon === "dark" && "#55433C"};
 background-color: ${props => props.typePokemon === "flying" && "#A891EC"};
+background-image: url(${PokeBola});
+background-repeat: no-repeat;
+background-size: 50rem;
+background-position: right;
 margin-left: 1.6rem;
 margin-right: 1.6rem;
 position: absolute;
-width: 87rem;
+width: 79rem;
 height: 42rem;
 border-radius: 2.368rem;
 
@@ -85,6 +89,22 @@ left: 360px;
 top: 24px;
 background: #FFFFFF;
 border-radius: 12px;
+h2{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 29px;
+margin-left: 18px;
+}
+p{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+margin-left: 18px;
+padding-bottom: 10px;}
 `
 export const CardQuatro = styled.div`
 position: absolute;
@@ -94,5 +114,66 @@ left: 771px;
 top: 184px;
 background: #FFFFFF;
 border-radius: 8px;
-overflow-y: auto
+overflow-y: auto;
+h2{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 29px;
+margin-left: 18px;
+}
+p{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+margin-left: 18px;
+padding-bottom: 10px;
+}
+`
+
+export const CardPokemon = styled.div`
+    margin-left: 60%;
+`
+
+export const ContainerImg = styled.div`
+margin-left: 18rem ;
+img{
+  position: relative;
+  max-width: 16.87rem;
+  right: 1.7rem;
+  bottom: 7rem;
+  
+}
+
+`
+
+export const Name = styled.div`
+margin-top: 0.8rem;
+position: absolute;
+width: 9.938rem;
+height: 5rem;
+padding-left: 1.438rem;
+padding-top: 2.5rem;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 3rem;
+line-height: 2.438rem;
+color: #FFFFFF;
+`
+export const Type = styled.div`
+padding-top: 1rem;
+position: absolute;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 1.063rem;
+width: 6.188rem;
+height: 1.938rem;
+margin-left: 1.438rem;
+margin-top: 5.563rem;
+border-radius: 0.5rem;
 `

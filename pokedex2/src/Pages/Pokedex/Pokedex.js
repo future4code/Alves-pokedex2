@@ -16,11 +16,12 @@ const Pokedex = () => {
     localStorage.removeItem(`chave ${id}`)
   }
 
-  console.log(pokedex)
-  const id = localStorage.getItem(`chave 1`)
-  console.log(id)
+  // console.log(pokedex)
+  // const id = localStorage.getItem(`chave 1`)
+  // console.log(id)
+
   const listOfCards = pokedex?.map((pokemon) => {
-    if (localStorage.getItem(`chave ${pokemon.id}`)) {
+    
       return (
         <ContainerCard key={pokemon.name} typePokemon={pokemon.types[0].type.name}>
           <Id>
@@ -46,13 +47,9 @@ const Pokedex = () => {
           <Button onClick={() =>  removeFromPokedex(pokemon, pokemon.id) }>Excluir</Button>
         </ContainerCard>
       )
-    }  else {
-      return (
-        <p>Não há pokemons</p>
-      )
-    } 
+    })
 
-  })
+  
 
 
 

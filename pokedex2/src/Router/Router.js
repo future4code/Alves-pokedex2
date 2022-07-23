@@ -10,7 +10,7 @@ function Router() {
             <Header />
             <Routes>
                 <Route index exact path="/" element={<Home />} />
-                {/* <Route path=':number' element={<Home />} /> */}
+                <Route path=":number" element={<Home />} />
                 <Route path="/Pokedex" element={<Pokedex />} />
                 <Route path="/Pokedex/DetailsPoke/:name" element={<DetailsPoke />} />
                 <Route path="/DetailsPoke/:name" element={<DetailsPoke />} />
