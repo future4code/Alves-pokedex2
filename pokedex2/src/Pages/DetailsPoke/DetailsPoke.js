@@ -48,9 +48,10 @@ const DetailsPoke = () => {
           {details.stats && details.stats.map((stat, index) => {
             return (<div>
               <p key={index}> {stat.stat.name}: <strong>{stat.base_stat} </strong> </p>
-            </div>
+              </div>
             )
           })}
+            <p><strong>Total: </strong> {details.stats && details.stats[0]?.base_stat + details.stats[1]?.base_stat + details.stats[2]?.base_stat + details.stats[3]?.base_stat + details.stats[4]?.base_stat + details.stats[5]?.base_stat}</p>  
         </CardTres>
         <CardPokemon>
           <Id>
