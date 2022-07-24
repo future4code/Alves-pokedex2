@@ -23,7 +23,7 @@ const Pokedex = () => {
   const listOfCards = pokedex?.map((pokemon) => {
     
       return (
-        <ContainerCard key={pokemon.name} typePokemon={pokemon.types[0].type.name}>
+        <ContainerCard key={pokemon.name} typePokemon={pokemon.types && pokemon.types[0].type && pokemon.types[0].type.name}>
           <Id>
             #{pokemon.id}
           </Id>
@@ -39,7 +39,7 @@ const Pokedex = () => {
             })}
           </Type>
           <ContainerImg>
-            <img width='150rem' src={pokemon["sprites"]["other"]["official-artwork"]["front_default"]} />
+            <img width='150rem' src={pokemon.sprites?.other?.["official-artwork"]["front_default"]} />
           </ContainerImg>
           <TextDetails >
             <h3 onClick={() =>  goToPokedexDetails(navigate, pokemon.name) }>Detalhes</h3>
