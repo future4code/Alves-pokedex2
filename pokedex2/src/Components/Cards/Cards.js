@@ -4,6 +4,8 @@ import { goToDetailsPoke } from '../../Router/Coordinator'
 import { ContainerCard, BigContainer, Id, Name, Type, TextType, Icon, TextDetails, Button, ContainerImg } from './CardsStyled'
 import { GlobalContext } from '../Global/GlobalContext'
 import DefineTypes from '../Types/Types'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cards = () => {
   const navigate = useNavigate()
@@ -13,6 +15,7 @@ const Cards = () => {
     setPokemonListDetails(pokemonListDetails.filter(pokemon => pokemon.name !== newPokemon.name))
     const newPokedex = [...pokedex, newPokemon]
     setPokedex(newPokedex)
+    toast.success('O pokémon foi capturado')
    localStorage.setItem(`chave ${id}`, id)
    localStorage.setItem("pokedex", JSON.stringify(newPokedex))
   }  

@@ -5,6 +5,8 @@ import { ContainerCard, Id, BigContainer, Name, Type, TextType, Icon, TextDetail
 import { goToPokedexDetails } from '../../Router/Coordinator'
 import DefineTypes from '../../Components/Types/Types'
 import { ContainerHome } from '../Home/HomeStyled'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Pokedex = () => {
   const navigate = useNavigate()
@@ -13,6 +15,7 @@ const Pokedex = () => {
   const removeFromPokedex = (newPokemon, id) => {
     setPokedex(pokedex.filter(pokemon => newPokemon.name !== pokemon.name))
     setPokemonListDetails([newPokemon, ...pokemonListDetails])
+    toast('O pokémon foi excluído da pokedéx')
     localStorage.removeItem(`chave ${id}`)
   }
 
