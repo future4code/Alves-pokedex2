@@ -6,6 +6,7 @@ background-color: #5e5e5e;
 position: relative;
 width: 100%;
 height: 74rem;
+
 `
 export const Titulo = styled.div`
 h1{
@@ -51,7 +52,12 @@ position: absolute;
 width: 79rem;
 height: 42rem;
 border-radius: 2.368rem;
-
+@media (max-width: 500px) {
+        height: 100%;
+        width: 22rem;
+        margin-left: 0;
+        flex-wrap: wrap;
+    }
 `
 
 export const CardUm = styled.div`
@@ -66,6 +72,9 @@ border-radius: 8px;
 img{
     width: 17rem;
 }
+@media(max-width: 500px) {
+        display: none;
+  }
 `
 
 export const CardDois = styled.div`
@@ -80,6 +89,9 @@ border-radius: 8px;
 img{
     width: 17rem;
 }
+@media(max-width: 500px) {
+        display: none;
+  }
 `
 export const CardTres = styled.div`
 position: absolute;
@@ -105,6 +117,12 @@ font-size: 14px;
 line-height: 17px;
 margin-left: 18px;
 padding-bottom: 10px;}
+@media(max-width: 500px) {
+    height: 370px;
+    left: 0px;
+top: 270px;
+
+}
 `
 export const CardQuatro = styled.div`
 position: absolute;
@@ -132,10 +150,20 @@ line-height: 17px;
 margin-left: 18px;
 padding-bottom: 10px;
 }
+@media(max-width: 500px) {
+    height: 370px;
+    left: 0px;
+top: 700px;
+
+}
 `
 
 export const CardPokemon = styled.div`
     margin-left: 60%;
+    @media(max-width: 500px) {
+        margin-left: 0;
+
+}
 `
 
 export const ContainerImg = styled.div`
@@ -146,6 +174,15 @@ img{
   right: 1.7rem;
   bottom: 7rem;
   
+}
+@media(max-width: 500px) {
+
+    img{
+        margin-top: 13rem;
+  max-width: 7rem;
+  right: 2.5rem;
+  
+}
 }
 
 `
@@ -163,6 +200,11 @@ font-weight: 700;
 font-size: 3rem;
 line-height: 2.438rem;
 color: #FFFFFF;
+@media(max-width: 500px) {
+
+display: flex;
+flex-direction: column;
+}
 `
 export const Type = styled.div`
 padding-top: 1rem;
@@ -176,4 +218,9 @@ height: 1.938rem;
 margin-left: 1.438rem;
 margin-top: 5.563rem;
 border-radius: 0.5rem;
+@media(max-width: 500px) {
+
+display: flex;
+flex-direction: column;
+}
 `

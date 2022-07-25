@@ -17,6 +17,9 @@ margin-bottom: 53px;
 font-family: 'Poppins';
 font-style: normal;
 }
+@media(max-width: 500px) {
+  margin-left: 0px;
+}
 `
 
 export const ContainerCard = styled.div`
@@ -46,6 +49,10 @@ background-image: url(${PokeBola});
 background-repeat: no-repeat;
 background-size: 13rem;
 background-position: right;
+@media(max-width: 500px) {
+  width: 22rem;
+height: 13.125rem;
+  }
 `
 export const Id = styled.div`
 position: absolute;
@@ -146,6 +153,10 @@ margin-top: 9.938rem ;
 margin-left: 15rem ;
 margin-bottom: 0.813rem ;
 margin-right: 1.375rem;
+@media(max-width: 500px) {
+  margin-left: 12rem ;
+
+  }
 `
 
 export const ContainerImg = styled.div`

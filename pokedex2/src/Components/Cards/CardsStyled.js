@@ -6,7 +6,7 @@ display: flex;
 flex-wrap: wrap;
 gap: 3rem;
 margin-left: 40px;
-@media(max-width: 800px) {
+@media(max-width: 500px) {
   margin-left: 0px;
 }
 `
@@ -38,7 +38,7 @@ background-image: url(${PokeBola});
 background-repeat: no-repeat;
 background-size: 13rem;
 background-position: right;
-@media(max-width: 800px) {
+@media(max-width: 500px) {
   width: 22rem;
 height: 13.125rem;
   }
@@ -142,7 +142,7 @@ margin-top: 9.938rem ;
 margin-left: 15rem ;
 margin-bottom: 0.813rem ;
 margin-right: 1.375rem;
-@media(max-width: 800px) {
+@media(max-width: 500px) {
   margin-left: 12rem ;
 
   }
@@ -156,7 +156,7 @@ img{
   right: 1.7rem;
   bottom: 52px;
 }
-@media(max-width: 800px) {
+@media(max-width: 500px) {
   margin-left: 14rem ;
   img{
   max-width: 10rem;

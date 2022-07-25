@@ -16,7 +16,7 @@ margin-bottom: 53px;
 font-family: 'Poppins';
 font-style: normal;
 }
-@media(max-width: 800px) {
+@media(max-width: 500px) {
     h1{
 margin-top: 3rem;
 margin-left: 0.7rem;
