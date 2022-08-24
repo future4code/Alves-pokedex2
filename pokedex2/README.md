@@ -15,3 +15,4 @@ Se o usuário clica em detalhes no card da home, surge um botão de capturar no 
 - Nicole Prim
 - Ilena Acioli
 - Rafael Santos
+
